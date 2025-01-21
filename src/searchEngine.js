@@ -8,5 +8,5 @@ export default function SearchEngine(){
                 <button type="submit"> search </button>
             </form>
         </div>
-    )
+    );
 }
