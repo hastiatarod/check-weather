@@ -9,17 +9,33 @@
 }
 
 .appContainer{
-  max-width: 60%;
+  max-width: 40%;
   background-color: #ffffff33;
-  border-radius: 6px;
-  border: 1px solid white;
+  border-radius: 40px;
+  box-shadow: 0 30px 50px #41326433;
   margin: 100px auto;
-  padding: 20px;
+  padding: 8px 8px;
+}
+.box-1{
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 32px;
+}
+.box-2{
+  margin-top: 8px;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 32px;
+}
+.box-3{
+  margin-top: 8px;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 32px;
 }
 .searchContainer{
   display: flex;
   gap: 10px;
-
 }
 .searchContainer input{
   flex: 1;
@@ -30,23 +46,30 @@
 .city-info-container{
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  margin-top: 30px;
+  
 }
 .info{
-
+  flex: 1;
+  border-radius: 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   text-align: left;
+  
 }
 .degree{
   display: flex;
   gap: 10px;
   align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.forecastBox{
+  display: flex;
+  justify-content: space-evenly;
 }
 .forecast{
-  margin-top: 40px;
-  border: 1px solid white;
-  border-radius: 5px;
   padding: 20px;
-
 }
