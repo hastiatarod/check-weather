@@ -1,15 +1,16 @@
 import React from "react";
-export default function CityInfo(){
+
+export default function CityInfo({city, weather}){
     return(
         <div className="city-info-container">
             <div className="info">
             
-                    <h2>Tehran</h2>
+                    <h2>{city ? city : "Enter a city"}</h2>
                     <div> Tuesday 19:22 </div>
             </div>
             <div className="degree">
-                <div>🥶</div>
-                <div>6℃</div>
+                <div><img src={weather.icon} alt={weather.description} /></div>
+                <div>{weather.temperature !== undefined ? `${Math.round(weather.temperature)}℃` : "Loading..."}</div>
             </div>
             
             
