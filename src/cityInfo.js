@@ -3,12 +3,16 @@ export default function CityInfo(){
     return(
         <div className="city-info-container">
             <div className="info">
-                <div>6℃</div>
-                <h2>Tehran</h2>
+            
+                    <h2>Tehran</h2>
+                    <div> Tuesday 19:22 </div>
             </div>
             <div className="degree">
                 <div>🥶</div>
+                <div>6℃</div>
             </div>
+            
+            
         </div>
 
     );

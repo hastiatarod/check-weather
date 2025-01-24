@@ -40,13 +40,19 @@
 .searchContainer input{
   flex: 1;
   padding: 10px;
-  border: white;
-  border-radius: 5px ;
+  border: 1px solid #54CBAE;
+  border-radius: 17px ;
+}
+.searchContainer button{
+  border: 1px solid #54CBAE;
+  border-radius: 17px ;
+  background-color: transparent ;
+  padding: 10px 10px;
 }
 .city-info-container{
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: 30px auto;
   
 }
 .info{
@@ -60,14 +66,26 @@
 }
 .degree{
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   border-radius: 8px;
   padding: 20px;
 }
+.weather-details ul{
+  list-style: none;
+  text-align: left;
+  
+}
+.weather-details li{
+  display: flex;
+  justify-content: space-between;
+
+}
+
 
 .forecastBox{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .forecast{
