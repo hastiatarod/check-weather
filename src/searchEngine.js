@@ -14,6 +14,7 @@ export default function SearchEngine({setWeather , city, setCity}){
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             description: response.data.weather[0].description, // Add description for the weather icon
           });
+          console.log(response);
           })
         .catch((error) => {
           console.error("Error fetching weather data:", error.message);
@@ -22,7 +23,7 @@ export default function SearchEngine({setWeather , city, setCity}){
             console.error("Data:", error.response.data);
           }
         });
-    },
+            },
     [setWeather]
   );
   useEffect(() => {

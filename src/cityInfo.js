@@ -6,6 +6,7 @@ export default function CityInfo({city, weather}){
             <div className="info">
             
                     <h2>{city}</h2>
+                    <div>{weather.description} </div>
                     <div> Tuesday 19:22 </div>
             </div>
             <div className="degree">

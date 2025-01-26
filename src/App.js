@@ -19,7 +19,7 @@ function App() {
           <CityInfo city={city} weather={weather} ></CityInfo>
         </div>
         <div className='box-2'>
-        <CurrentDay></CurrentDay>
+        <CurrentDay weather={weather}></CurrentDay>
         </div>
         <div className='box-3'>
       <Forecast></Forecast>
