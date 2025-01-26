@@ -9,13 +9,13 @@ import Forecast from "./forecast";
 
 
 function App() {
-  let [city, setCity] = useState("");
+  let [city, setCity] = useState("Tehran");
   let [weather, setWeather] = useState({});
   return (
     <div className="App">
       <div className='appContainer'>
         <div className='box-1'>
-          <SearchEngine city={city} setCity={setCity} weather={weather} setWeather={setWeather} ></SearchEngine>
+          <SearchEngine setWeather={setWeather} city={city} setCity={setCity} ></SearchEngine>
           <CityInfo city={city} weather={weather} ></CityInfo>
         </div>
         <div className='box-2'>

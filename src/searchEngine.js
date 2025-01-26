@@ -1,34 +1,62 @@
-import React , {useState} from "react";
+import React , { useState,useEffect, useCallback} from "react";
 import axios from 'axios';
 
-export default function SearchEngine({ city, setCity,setWeather }){
-
+export default function SearchEngine({setWeather , city, setCity}){
+    const [inputCity, setInputCity] = useState("");
     
-    let [loaded, setLoaded] = useState(false);
-
-
-    function showResult(response){
-        setLoaded(true);
-        setWeather({
+    const fetchWeather = useCallback((cityName) => {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2b6fdad0cbd018949c50c70f72250726&units=metric`;
+      axios
+        .get(url)
+        .then((response) => {
+             setWeather({
             temperature: response.data.main.temp,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+            description: response.data.weather[0].description, // Add description for the weather icon
+          });
+          })
+        .catch((error) => {
+          console.error("Error fetching weather data:", error.message);
+          if (error.response) {
+            console.error("Status:", error.response.status);
+            console.error("Data:", error.response.data);
+          }
         });
-    }
-    function handleSubmit(event){
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2b6fdad0cbd018949c50c70f72250726&units=metric`;
+    },
+    [setWeather]
+  );
+  useEffect(() => {
+    fetchWeather(city);
+  }, [city, fetchWeather]);
+
+
+    const handleSubmit = (event) => {
         event.preventDefault();
-        axios.get(url).then(showResult);
+         if (inputCity.trim()) {
+        setCity(inputCity); 
+        fetchWeather(inputCity); 
+        setInputCity(""); 
+    } else {
+      console.error("City name cannot be empty.");
+    }
+  
+        
 
     }
-    function handleCity(event){
-        setCity(event.target.value)
+     const handleInputChange = (event) => {
+         setInputCity(event.target.value);
 
     }
+   
+
     
     return(
         <div>
             <form className="searchContainer" onSubmit={handleSubmit}>
-                <input type="text" placeholder="Enter a city.." onChange={handleCity}></input>
+                <input type="text" 
+                placeholder="Enter a city.." 
+                value={inputCity} 
+                onChange={handleInputChange}></input>
                 <button type="submit"> 🔎 </button>
             </form>
         </div>
