@@ -29,12 +29,16 @@ export default function SearchEngine({setWeather , city, setCity}){
     fetchWeather(city);
   }, [city, fetchWeather]);
 
+ const capitalizeCity = (name) =>
+    name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
          if (inputCity.trim()) {
-        setCity(inputCity); 
-        fetchWeather(inputCity); 
+          const normalizedCity = capitalizeCity(inputCity);
+        setCity(normalizedCity); 
+        fetchWeather(normalizedCity); 
         setInputCity(""); 
     } else {
       console.error("City name cannot be empty.");
