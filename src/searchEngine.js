@@ -48,7 +48,6 @@ export default function SearchEngine({setWeather, city, setCity, setLocalTime}){
           weekday: "long",
           hour: "2-digit",
           minute: "2-digit",
-          second: "2-digit",
         };
         const formattedTime = localDate.toLocaleString("en-US", options);
         setLocalTime(formattedTime); // Update the state
