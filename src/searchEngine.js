@@ -57,7 +57,7 @@ export default function SearchEngine({setWeather, city, setCity, setLocalTime}){
       // Cleanup interval on component unmount
       return () => clearInterval(interval);
     }
-  }, [timezone]);
+  }, [timezone,setLocalTime]);
 
  const capitalizeCity = (name) =>
     name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
