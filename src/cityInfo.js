@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function CityInfo({city, weather}){
+export default function CityInfo({city, weather,localTime}){
     return(
         <div className="city-info-container">
             <div className="info">
             
                     <h2>{city}</h2>
                     <div>{weather.description} </div>
-                    <div> Tuesday 19:22 </div>
+                    <div> {localTime || "Loading..."}</div>
             </div>
             <div className="degree">
                 <div>{weather.icon ? (

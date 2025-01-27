@@ -11,12 +11,13 @@ import Forecast from "./forecast";
 function App() {
   let [city, setCity] = useState("Tehran");
   let [weather, setWeather] = useState({});
+  const [localTime, setLocalTime] = useState("");
   return (
     <div className="App">
       <div className='appContainer'>
         <div className='box-1'>
-          <SearchEngine setWeather={setWeather} city={city} setCity={setCity} ></SearchEngine>
-          <CityInfo city={city} weather={weather} ></CityInfo>
+          <SearchEngine setWeather={setWeather} weather={weather} city={city} setCity={setCity} setLocalTime={setLocalTime} ></SearchEngine>
+          <CityInfo city={city} weather={weather} localTime={localTime}></CityInfo>
         </div>
         <div className='box-2'>
         <CurrentDay weather={weather}></CurrentDay>
