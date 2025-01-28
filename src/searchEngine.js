@@ -16,6 +16,9 @@ export default function SearchEngine({setWeather, city, setCity, setLocalTime}){
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             description: response.data.weather[0].description, // Add description for the weather icon
             timezone: response.data.timezone,
+            feelsLike: response.data.main.feels_like,
+            humidity:response.data.main.humidity,
+            wind: response.data.wind.speed,
           });
           setTimezone(response.data.timezone); // Update the timezone state
           console.log(response);

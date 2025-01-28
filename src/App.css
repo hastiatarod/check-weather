@@ -23,7 +23,7 @@
 }
 .box-2{
   background-color: white;
-  padding: 8px;
+  padding: 18px;
   border-radius: 32px;
   margin-top: 8px;
 }
@@ -79,7 +79,7 @@
  }
  .weather-details .child{
   padding: 17px 15px;
-  border-radius: 32px;
+  border-radius: 14px;
   border: 2px dotted #9585e0f7;
   flex: 1;
  }

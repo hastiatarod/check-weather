@@ -3,16 +3,22 @@ export default function CurrentDay({weather}){
     return(
         <div className="weather-details">
             <div className="child">
-             <div> feels like</div> <div>💧</div>
+             <div>🌡</div>
+             <div> feels like </div>
+             <div>{Math.round(weather.feelsLike)}℃</div>
 
             </div>
                 
             <div className="child">
-              <div> Humidity: 70%</div> <div>💧</div>
+                <div>💧</div>
+              <div> Humidity </div> 
+              <div>{weather.humidity}%</div>
             </div> 
 
             <div className="child">
-                 <div>Wind: 2.24km/h </div><div>🌪</div>
+                <div>🌪</div>
+                 <div>Wind </div>
+                 <div>{weather.wind} </div>
             </div>
               
         </div>
