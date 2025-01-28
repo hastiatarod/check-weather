@@ -39,12 +39,12 @@ export default function SearchEngine({setWeather, city, setCity, setLocalTime}){
     if (timezone !== undefined) {
       // Update the local time every second
       const interval = setInterval(() => {
-        const utcTime = new Date(); 
-        const localTimeInMilliseconds = utcTime + timezone * 1000; 
+        const utcTime = Date.now(); 
+        const localTimeInMilliseconds = utcTime + timezone ; 
         const localDate = new Date(localTimeInMilliseconds); // Convert to Date object
 
         // Format the date and time
-        const options = {
+        const options: Intl.DateTimeFormatOptions= {
           weekday: "long",
           hour: "2-digit",
           minute: "2-digit",

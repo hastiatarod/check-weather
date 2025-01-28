@@ -5,6 +5,9 @@ export default function CurrentDay({weather}){
             <ul>
                 
                 <li>
+                   <div> feels like</div> <div>💧</div>
+                </li>
+                <li>
                    <div> Humidity: 70%</div> <div>💧</div>
                 </li>
                 <li>
