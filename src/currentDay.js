@@ -2,17 +2,18 @@ import React from "react";
 export default function CurrentDay({weather}){
     return(
         <div className="weather-details">
-            <ul>
+            <div className="child">
+             <div> feels like</div> <div>💧</div>
+
+            </div>
                 
-                <li>
-                   <div> feels like</div> <div>💧</div>
-                </li>
-                <li>
-                   <div> Humidity: 70%</div> <div>💧</div>
-                </li>
-                <li>
-                    <div>Wind: 2.24km/h </div><div>🌪</div>
-                </li>
-            </ul>
+            <div className="child">
+              <div> Humidity: 70%</div> <div>💧</div>
+            </div> 
+
+            <div className="child">
+                 <div>Wind: 2.24km/h </div><div>🌪</div>
+            </div>
+              
         </div>
     );}

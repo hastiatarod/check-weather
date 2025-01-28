@@ -22,10 +22,10 @@
   border-radius: 32px;
 }
 .box-2{
-  margin-top: 8px;
   background-color: white;
-  padding: 20px 30px;
+  padding: 8px;
   border-radius: 32px;
+  margin-top: 8px;
 }
 .box-3{
   margin-top: 8px;
@@ -71,17 +71,18 @@
   border-radius: 8px;
   padding: 20px;
 }
-.weather-details ul{
-  list-style: none;
-  text-align: left;
-  
-}
-.weather-details li{
+ .weather-details{
   display: flex;
-  justify-content: space-between;
-
-}
-
+  justify-content: space-evenly;
+  gap: 8px;
+  flex-wrap: wrap;
+ }
+ .weather-details .child{
+  padding: 17px 15px;
+  border-radius: 32px;
+  border: 2px dotted #9585e0f7;
+  flex: 1;
+ }
 
 .forecastBox{
   display: flex;
