@@ -110,20 +110,20 @@
 
 .degree .digit {
   display: flex;
-  font-size: 44px;
+  font-size: 75px;
   font-weight: 500;
   margin-top: -20px;
 }
 
 .degree .digit .unit {
   font-size: 23px;
-  margin-top: 5px;
+  margin-top: 18px;
 }
 
 
 .degree .icon {
   margin-right: -30px;
-  margin-top: -20px;
+  margin-top: -7px;
 }
 
 .degree .icon img {
