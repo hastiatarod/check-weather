@@ -47,7 +47,7 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime }
         const localDate = new Date(localTimeInMilliseconds); // Convert to Date object
 
         // Format the date and time
-        const options: Intl.DateTimeFormatOptions = {
+        const options = {
           weekday: "long",
           hour: "2-digit",
           minute: "2-digit",

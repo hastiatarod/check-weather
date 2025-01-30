@@ -15,7 +15,20 @@ export default function CityInfo({ city, weather, localTime }) {
                 ) : (
                     "Loading icon..."
                 )}</div>
-                <div className="digit">{weather.temperature !== undefined ? `${Math.round(weather.temperature)}℃` : "Loading..."}</div>
+
+                <div className="digit">
+                    {weather.temperature !== undefined ? (
+                        <>
+                            <span className="temp">
+                                {Math.round(weather.temperature)}
+                            </span>
+                            <span className="unit">℃</span>
+                        </>
+                    ) : ("Loading..."
+                    )}
+
+                </div>
+
             </div>
 
 
