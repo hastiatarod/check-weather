@@ -1,47 +1,23 @@
 import React from "react";
-export default function Forecast() {
+export default function Forecast({ forecast }) {
     return (
         <div className="forecastBox">
-            <div className="forecast">
-                <div>Tue</div>
-                <div>🌧</div>
-                <div>
-                    <div>14°</div>
-                    <div>7°</div>
-                </div>
-            </div>
-            <div className="forecast">
-                <div>Tue</div>
-                <div>🌧</div>
-                <div>
-                    <div>14°</div>
-                    <div>7°</div>
-                </div>
-            </div>
-            <div className="forecast">
-                <div>Tue</div>
-                <div>🌧</div>
-                <div>
-                    <div>14°</div>
-                    <div>7°</div>
-                </div>
-            </div>
-            <div className="forecast">
-                <div>Tue</div>
-                <div>🌧</div>
-                <div>
-                    <div>14°</div>
-                    <div>7°</div>
-                </div>
-            </div>
-            <div className="forecast">
-                <div>Tue</div>
-                <div>🌧</div>
-                <div>
-                    <div>14°</div>
-                    <div>7°</div>
-                </div>
-            </div>
+
+            {forecast.length > 0 ? (
+                forecast.map((day, index) => (
+                    <div key={index} className="forecast-day">
+                        <div className="day">{new Date(day.date).toLocaleDateString("en-US", { weekday: "long" })}</div>
+                        <img src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`} alt="weather icon" />
+                        <div className="min-max">
+                            <div><strong>{Math.round(day.maxTemp)}°C</strong></div>
+                            <div>{Math.round(day.minTemp)}°C</div>
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <p>Loading forecast...</p>
+            )}
+
         </div>
 
     );

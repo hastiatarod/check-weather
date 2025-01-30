@@ -1,9 +1,47 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios';
 
-export default function SearchEngine({ setWeather, city, setCity, setLocalTime }) {
+export default function SearchEngine({ setWeather, city, setCity, setLocalTime, setForecast }) {
   const [inputCity, setInputCity] = useState("");
   const [timezone, setTimezone] = useState();
+
+  const fetchForecast = useCallback((cityName) => {
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=2b6fdad0cbd018949c50c70f72250726&units=metric`;
+
+    axios
+      .get(url)
+      .then((response) => {
+        const dailyForecast = processForecast(response.data.list);
+        setForecast(dailyForecast);
+      })
+      .catch((error) => {
+        console.error("Error fetching forecast:", error.message);
+      });
+  }, [setForecast]);
+
+  const processForecast = (data) => {
+    let dailyData = {};
+    data.forEach((item) => {
+      let date = item.dt_txt.split(" ")[0]; // Extract only the date (YYYY-MM-DD)
+      if (!dailyData[date]) {
+        dailyData[date] = {
+          minTemp: item.main.temp_min,
+          maxTemp: item.main.temp_max,
+          icon: item.weather[0].icon,
+        };
+      } else {
+        dailyData[date].minTemp = Math.min(dailyData[date].minTemp, item.main.temp_min);
+        dailyData[date].maxTemp = Math.max(dailyData[date].maxTemp, item.main.temp_max);
+      }
+    });
+    return Object.keys(dailyData)
+      .slice(0, 5)
+      .map((date) => ({
+        date,
+        ...dailyData[date],
+      }));
+  };
+
 
 
   const fetchWeather = useCallback((cityName) => {
@@ -21,18 +59,17 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime }
           wind: response.data.wind.speed,
         });
         setTimezone(response.data.timezone); // Update the timezone state
+        fetchForecast(cityName);
         console.log(response);
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error.message);
-        if (error.response) {
-          console.error("Status:", error.response.status);
-          console.error("Data:", error.response.data);
-        }
       });
   },
-    [setWeather]
+    [setWeather, fetchForecast]
   );
+
+
 
   useEffect(() => {
     fetchWeather(city);

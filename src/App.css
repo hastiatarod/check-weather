@@ -150,6 +150,24 @@
   justify-content: space-evenly;
 }
 
-.forecast {
-  padding: 20px;
+.forecast-day {
+  flex: 1;
+}
+
+.forecast-day .min-max {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -5px;
+  font-size: 15px;
+}
+
+.forecast-day .day {
+  font-size: 16px;
+
+}
+
+.forecast-day img {
+  width: 60px;
+  margin-top: -5px;
 }
