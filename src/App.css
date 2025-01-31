@@ -76,7 +76,7 @@
 }
 
 .info h2 {
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -105,29 +105,29 @@
   gap: 20px;
   align-items: center;
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px;
 }
 
 .degree .digit {
   display: flex;
-  font-size: 75px;
+  font-size: 65px;
   font-weight: 500;
-  margin-top: -20px;
+  margin-top: -9px;
 }
 
 .degree .digit .unit {
-  font-size: 23px;
+  font-size: 19px;
   margin-top: 18px;
 }
 
 
 .degree .icon {
   margin-right: -30px;
-  margin-top: -7px;
+  margin-top: 3px;
 }
 
 .degree .icon img {
-  width: 120px;
+  width: 111px;
 }
 
 .weather-details {
@@ -138,10 +138,21 @@
 }
 
 .weather-details .child {
+  display: flex;
+  justify-content: space-around;
   padding: 17px 15px;
   border-radius: 14px;
   border: 2px dotted #9585e0f7;
   flex: 1;
+}
+
+.weather-details .child img {
+  width: 35px;
+}
+
+.apparent {
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .forecastBox {
@@ -164,10 +175,11 @@
 
 .forecast-day .day {
   font-size: 16px;
+  font-weight: 600;
 
 }
 
 .forecast-day img {
-  width: 60px;
+  width: 70px;
   margin-top: -5px;
 }
