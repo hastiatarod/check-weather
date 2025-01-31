@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios';
+import icons8Search from "./image/icons8Search.svg";
 
 export default function SearchEngine({ setWeather, city, setCity, setLocalTime, setForecast }) {
   const [inputCity, setInputCity] = useState("");
@@ -130,7 +131,7 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime, 
           placeholder="Enter a city.."
           value={inputCity}
           onChange={handleInputChange}></input>
-        <button type="submit"> 🔎 </button>
+        <button type="submit"> <img src={icons8Search} alt="icons8Search" /> </button>
       </form>
 
 
