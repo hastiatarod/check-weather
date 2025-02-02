@@ -93,6 +93,7 @@
 .info .main {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .weather-description {
@@ -350,6 +351,10 @@
     margin-top: 25px;
   }
 
+  .degree .digit .unit {
+    margin-top: 16px;
+  }
+
 }
 
 @media (max-width: 455px) {
@@ -407,21 +412,44 @@
   }
 }
 
+@media (max-width: 400px) {
+  .weather-description {
+    font-size: 20px;
+  }
+
+  .degree .icon img {
+    width: 93px;
+  }
+
+  .degree .digit {
+    font-size: 56px;
+  }
+
+  .degree .digit .unit {
+    margin-top: 13px;
+  }
+
+}
+
 @media (max-width: 375px) {
   .city-info-container {
     margin: 12px auto;
   }
 
   .degree .digit {
-    font-size: 54px;
+    font-size: 50px;
+  }
+
+  .degree .digit .unit {
+    margin-top: 10px;
   }
 
   .degree .icon img {
-    width: 90px;
+    width: 85px;
   }
 
   .weather-description {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .info h2 {
