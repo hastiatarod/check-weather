@@ -10,7 +10,7 @@ export default function CurrentDay({ weather }) {
                 <img src={feelsLike} alt="feelsLike" />
                 <div>
                     <div className="apparent"> feels like </div>
-                    <div>{Math.round(weather.feelsLike)}℃</div>
+                    <div className="digit">{Math.round(weather.feelsLike)}<div className="metric">℃</div> </div>
                 </div>
 
 
@@ -20,16 +20,16 @@ export default function CurrentDay({ weather }) {
                 <img src={humidity} alt="humidity" />
                 <div>
                     <div className="apparent"> Humidity </div>
-                    <div>{weather.humidity}%</div>
+                    <div className="digit">{weather.humidity}<div className="metric">%</div></div>
                 </div>
 
             </div>
 
             <div className="child">
                 <img src={wind} alt="wind" />
-                <div>
+                <div className="wind-small">
                     <div className="apparent">Wind </div>
-                    <div>{weather.wind} </div>
+                    <div className="digit">{Math.round(weather.wind)}<div className="metric">km/h</div> </div>
                 </div>
 
             </div>

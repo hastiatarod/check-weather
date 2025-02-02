@@ -40,7 +40,6 @@
 
 .searchContainer {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -90,29 +89,33 @@
 
 }
 
+.info .main {
+  display: flex;
+  justify-content: space-between;
+}
+
 .weather-description {
   font-size: 25px;
   font-weight: 600;
   color: #383838;
   padding-left: 5px;
+  align-content: center;
 }
 
 .local-time {
   font-family: "Bebas Neue",
     serif;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 400;
   font-style: normal;
   color: #616161;
-  margin-top: 30px;
+  padding-left: 5px;
 }
 
 .degree {
   display: flex;
   gap: 20px;
   align-items: center;
-  border-radius: 8px;
-  padding: 25px;
 }
 
 .degree .digit {
@@ -162,6 +165,19 @@
   margin-bottom: 5px;
 }
 
+.digit {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.digit .metric {
+  font-size: 12px;
+  color: #616161;
+  margin-top: 1px;
+}
+
 .forecastBox {
   display: flex;
   flex-wrap: wrap;
@@ -177,7 +193,16 @@
   justify-content: center;
   gap: 10px;
   margin-top: -5px;
+
+}
+
+.min-max-digit {
+  display: flex;
   font-size: 15px;
+}
+
+.forecast-day .min-max .metric {
+  font-size: 12px;
 }
 
 .forecast-day .day {
@@ -189,4 +214,267 @@
 .forecast-day img {
   width: 70px;
   margin-top: -5px;
+}
+
+/**************************************************/
+@media (max-width: 2656px) {
+  .appContainer {
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 2105px) {
+  .appContainer {
+    max-width: 27%;
+  }
+}
+
+@media (max-width: 1900px) {
+  .appContainer {
+    max-width: 32%;
+  }
+}
+
+@media (max-width: 1750px) {
+  .appContainer {
+    max-width: 34%;
+  }
+}
+
+
+@media (max-width: 1535px) {
+  .appContainer {
+    max-width: 35%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .appContainer {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 1235px) {
+  .appContainer {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .appContainer {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 970px) {
+  .appContainer {
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 860px) {
+  .appContainer {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 785px) {
+  .appContainer {
+    max-width: 68%;
+  }
+}
+
+@media (max-width: 702px) {
+  .appContainer {
+    max-width: 72%;
+  }
+}
+
+@media (max-width: 675px) {
+  .appContainer {
+    max-width: 77%;
+  }
+}
+
+@media (max-width: 610px) {
+  .appContainer {
+    max-width: 83%;
+  }
+}
+
+@media (max-width: 570px) {
+  .appContainer {
+    max-width: 87%;
+  }
+}
+
+@media (max-width: 537px) {
+  .appContainer {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 514px) {
+  .forecast-day .day {
+    font-size: 15px;
+  }
+
+  .min-max-digit {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 502px) {
+  .weather-details .child {
+    padding: 17px 12px;
+  }
+}
+
+@media (max-width: 482px) {
+  .apparent {
+    font-size: 14px;
+  }
+
+  .forecast-day .day {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 464px) {
+  .forecast-day {
+    flex: 0 1 calc(33.33% - 10px);
+  }
+
+  .forecast-day:nth-child(n+4) {
+    margin-top: 25px;
+  }
+
+}
+
+@media (max-width: 455px) {
+  .weather-details .child {
+    padding: 17px 20px;
+  }
+}
+
+@media (max-width: 446px) {
+  .weather-details .child .wind-small {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .weather-details .child:nth-child(n+3) {
+    justify-content: center;
+    gap: 38px;
+  }
+
+  .wind-small .apparent {
+    margin-bottom: 0;
+
+  }
+}
+
+@media (max-width: 440px) {
+  .degree .digit {
+    font-size: 62px;
+  }
+
+  .degree .icon img {
+    width: 105px;
+  }
+
+  .weather-description {
+    font-size: 22px;
+  }
+
+  .info h2 {
+    font-size: 37px;
+  }
+
+  .local-time {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 375px) {
+  .degree .digit {
+    font-size: 54px;
+  }
+
+  .degree .icon img {
+    width: 90px;
+  }
+
+  .weather-description {
+    font-size: 20px;
+  }
+
+  .info h2 {
+    font-size: 32px;
+  }
+
+  .local-time {
+    font-size: 17px;
+  }
+
+  .apparent {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 341px) {
+  .degree .digit {
+    font-size: 45px;
+  }
+
+  .degree .digit .unit {
+    font-size: 18px;
+    margin-top: 7px;
+  }
+
+  .degree .icon img {
+    width: 75px;
+  }
+
+  .weather-description {
+    font-size: 18px;
+  }
+
+  .info h2 {
+    font-size: 30px;
+  }
+
+  .local-time {
+    font-size: 17px;
+  }
+
+  .weather-details .child img {
+    width: 30px;
+  }
+
+  .digit {
+    font-size: 14px;
+  }
+
+  .digit .metric {
+    font-size: 11px;
+  }
+
+  .forecast-day .min-max {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 334px) {
+  .searchContainer input {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 320px) {
+  .searchContainer input {
+    max-width: 150px;
+  }
 }

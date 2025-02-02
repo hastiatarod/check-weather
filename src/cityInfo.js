@@ -6,30 +6,33 @@ export default function CityInfo({ city, weather, localTime }) {
             <div className="info">
 
                 <h2>{city}</h2>
-                <div className="weather-description">{weather.description} </div>
                 <div className="local-time"> {localTime || "Loading..."}</div>
-            </div>
-            <div className="degree">
-                <div className="icon" >{weather.icon ? (
-                    <img src={weather.icon} alt={weather.description || "Weather icon"} />
-                ) : (
-                    "Loading icon..."
-                )}</div>
+                <div className="main">
+                    <div className="weather-description">{weather.description} </div>
+                    <div className="degree">
+                        <div className="icon" >{weather.icon ? (
+                            <img src={weather.icon} alt={weather.description || "Weather icon"} />
+                        ) : (
+                            "Loading icon..."
+                        )}</div>
 
-                <div className="digit">
-                    {weather.temperature !== undefined ? (
-                        <>
-                            <span className="temp">
-                                {Math.round(weather.temperature)}
-                            </span>
-                            <span className="unit">℃</span>
-                        </>
-                    ) : ("Loading..."
-                    )}
+                        <div className="digit">
+                            {weather.temperature !== undefined ? (
+                                <>
+                                    <span className="temp">
+                                        {Math.round(weather.temperature)}
+                                    </span>
+                                    <span className="unit">℃</span>
+                                </>
+                            ) : ("Loading..."
+                            )}
 
+                        </div>
+
+                    </div>
                 </div>
-
             </div>
+
 
 
         </div>

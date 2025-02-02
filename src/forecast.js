@@ -9,8 +9,10 @@ export default function Forecast({ forecast }) {
                         <div className="day">{new Date(day.date).toLocaleDateString("en-US", { weekday: "long" })}</div>
                         <img src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`} alt="weather icon" />
                         <div className="min-max">
-                            <div><strong>{Math.round(day.maxTemp)}°C</strong></div>
-                            <div>{Math.round(day.minTemp)}°C</div>
+                            <div>
+                                <strong className="min-max-digit">{Math.round(day.maxTemp)}<div className="metric">°C</div></strong>
+                            </div>
+                            <div className="min-max-digit">{Math.round(day.minTemp)}<div className="metric">°C</div></div>
                         </div>
                     </div>
                 ))
