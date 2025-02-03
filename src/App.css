@@ -75,7 +75,6 @@
   flex: 1;
   border-radius: 8px;
   padding: 20px;
-  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -90,18 +89,13 @@
 
 }
 
-.info .main {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
 .weather-description {
   font-size: 25px;
   font-weight: 600;
   color: #383838;
   padding-left: 5px;
   align-content: center;
+  margin-top: 16px;
 }
 
 .local-time {
@@ -112,17 +106,20 @@
   font-style: normal;
   color: #616161;
   padding-left: 5px;
+  margin-top: 3px;
 }
 
 .degree {
   display: flex;
-  gap: 20px;
+  flex: 1;
+  justify-content: space-around;
   align-items: center;
+  padding: 10px;
 }
 
 .degree .digit {
   display: flex;
-  font-size: 65px;
+  font-size: 75px;
   font-weight: 500;
   margin-top: -9px;
 }
@@ -135,7 +132,7 @@
 
 .degree .icon {
   margin-right: -30px;
-  margin-top: 3px;
+  margin-top: 10px;
 }
 
 .degree .icon img {
