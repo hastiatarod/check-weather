@@ -121,7 +121,6 @@
   display: flex;
   font-size: 75px;
   font-weight: 500;
-  margin-top: -9px;
   margin-right: auto;
 }
 
@@ -259,33 +258,40 @@
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1209px) {
   .appContainer {
-    max-width: 50%;
+    max-width: 51%;
   }
 }
 
+@media (max-width: 1067px) {
+  .appContainer {
+    max-width: 57%;
+  }
+}
+
+
 @media (max-width: 970px) {
   .appContainer {
-    max-width: 55%;
+    max-width: 64%;
   }
 }
 
 @media (max-width: 860px) {
   .appContainer {
-    max-width: 60%;
+    max-width: 70%;
   }
 }
 
-@media (max-width: 785px) {
+@media (max-width: 777px) {
   .appContainer {
-    max-width: 68%;
+    max-width: 78%;
   }
 }
 
 @media (max-width: 702px) {
   .appContainer {
-    max-width: 72%;
+    max-width: 81%;
   }
 }
 
@@ -293,6 +299,19 @@
   .appContainer {
     max-width: 77%;
   }
+
+  .info h2 {
+    font-size: 29px;
+  }
+
+  .degree .digit {
+    font-size: 65px;
+  }
+
+  .degree .icon img {
+    width: 108px;
+  }
+
 }
 
 @media (max-width: 610px) {
@@ -313,7 +332,28 @@
   }
 }
 
-@media (max-width: 514px) {
+@media (max-width: 518px) {
+  .info h2 {
+    font-size: 27px;
+  }
+
+  .local-time {
+    font-size: 21px;
+  }
+
+  .weather-description {
+    font-size: 19px;
+  }
+
+  .degree .icon img {
+    width: 94px;
+  }
+
+  .degree .digit {
+    font-size: 58px;
+  }
+
+
   .forecast-day .day {
     font-size: 15px;
   }
@@ -330,6 +370,22 @@
 }
 
 @media (max-width: 482px) {
+  .info h2 {
+    font-size: 21px;
+  }
+
+  .local-time {
+    font-size: 19px;
+  }
+
+  .degree .icon img {
+    width: 87px;
+  }
+
+  .degree .digit {
+    font-size: 45px;
+  }
+
   .apparent {
     font-size: 14px;
   }
@@ -337,7 +393,9 @@
   .forecast-day .day {
     font-size: 14px;
   }
+
 }
+
 
 @media (max-width: 464px) {
   .forecast-day {
@@ -388,73 +446,50 @@
     padding-bottom: 0;
   }
 
-  .degree .digit {
-    font-size: 62px;
+}
+
+@media (max-width: 425px) {
+  .appContainer {
+    max-width: 80%;
+  }
+
+  .city-info-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: -32px;
+  }
+
+  .degree {
+    flex-direction: row-reverse;
+  }
+
+
+  .info h2 {
+    font-size: 38px;
+  }
+
+  .local-time {
+    font-size: 26px;
+  }
+
+  .weather-description {
+    font-size: 25px;
   }
 
   .degree .icon img {
     width: 105px;
   }
 
-  .weather-description {
-    font-size: 22px;
-  }
-
-  .info h2 {
-    font-size: 37px;
-  }
-
-  .local-time {
-    font-size: 21px;
-  }
-}
-
-@media (max-width: 400px) {
-  .weather-description {
-    font-size: 20px;
-  }
-
-  .degree .icon img {
-    width: 93px;
-  }
-
   .degree .digit {
-    font-size: 56px;
-  }
-
-  .degree .digit .unit {
-    margin-top: 13px;
+    font-size: 60px;
   }
 
 }
+
 
 @media (max-width: 375px) {
-  .city-info-container {
-    margin: 12px auto;
-  }
-
-  .degree .digit {
-    font-size: 50px;
-  }
-
-  .degree .digit .unit {
-    margin-top: 10px;
-  }
-
-  .degree .icon img {
-    width: 85px;
-  }
-
-  .weather-description {
-    font-size: 18px;
-  }
-
-  .info h2 {
-    font-size: 32px;
-  }
-
-  .local-time {
-    font-size: 17px;
+  .searchContainer {
+    gap: 4px;
   }
 
   .apparent {
@@ -462,30 +497,27 @@
   }
 }
 
+@media (max-width: 368px) {
+  .searchContainer input {
+    max-width: 159px;
+  }
+}
+
+@media (max-width: 356px) {
+  .searchContainer input {
+    max-width: 151px;
+  }
+}
+
+@media (max-width: 346px) {
+  .searchContainer input {
+    max-width: 145px;
+  }
+}
+
 @media (max-width: 341px) {
-  .degree .digit {
-    font-size: 45px;
-  }
-
-  .degree .digit .unit {
-    font-size: 18px;
-    margin-top: 7px;
-  }
-
-  .degree .icon img {
-    width: 75px;
-  }
-
-  .weather-description {
-    font-size: 18px;
-  }
-
-  .info h2 {
-    font-size: 30px;
-  }
-
-  .local-time {
-    font-size: 17px;
+  .searchContainer input {
+    max-width: 141px;
   }
 
   .weather-details .child img {
@@ -506,15 +538,32 @@
   }
 }
 
+@media (max-width: 337px) {
+  .forecast-day:nth-child(n+3) {
+    margin-top: 25px;
+  }
+
+}
+
 @media (max-width: 334px) {
   .searchContainer input {
-    max-width: 160px;
+    max-width: 135px;
   }
 }
 
 @media (max-width: 330px) {
+  .searchContainer input {
+    max-width: 131px;
+  }
+
   .weather-details .child {
     padding: 17px 12px;
+  }
+}
+
+@media (max-width: 330px) {
+  .searchContainer input {
+    max-width: 128px;
   }
 }
 
