@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios';
 import icons8Search from "./image/icons8Search.svg";
 
-export default function SearchEngine({ setWeather, city, setCity, setLocalTime, setForecast }) {
+export default function SearchEngine({ setWeather, city, setCity, setLocalTime, setForecast, }) {
   const [inputCity, setInputCity] = useState("");
   const [timezone, setTimezone] = useState();
 
@@ -62,6 +62,9 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime, 
         setTimezone(response.data.timezone); // Update the timezone state
         fetchForecast(cityName);
         console.log(response);
+
+
+
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error.message);
@@ -78,10 +81,9 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime, 
 
   useEffect(() => {
     if (timezone !== undefined) {
-      // Update the local time every second
       const interval = setInterval(() => {
         const utcTime = Date.now();
-        const localTimeInMilliseconds = utcTime + timezone;
+        const localTimeInMilliseconds = utcTime + timezone * 1000;
         const localDate = new Date(localTimeInMilliseconds); // Convert to Date object
 
         // Format the date and time
@@ -89,6 +91,7 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime, 
           weekday: "long",
           hour: "2-digit",
           minute: "2-digit",
+          timeZone: "UTC",
         };
         const formattedTime = localDate.toLocaleString("en-US", options);
         setLocalTime(formattedTime); // Update the state
@@ -96,6 +99,7 @@ export default function SearchEngine({ setWeather, city, setCity, setLocalTime, 
 
       // Cleanup interval on component unmount
       return () => clearInterval(interval);
+
     }
   }, [timezone, setLocalTime]);
 
