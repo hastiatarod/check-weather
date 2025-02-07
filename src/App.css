@@ -122,6 +122,7 @@
   font-size: 75px;
   font-weight: 500;
   margin-top: -9px;
+  margin-right: auto;
 }
 
 .degree .digit .unit {
@@ -131,12 +132,11 @@
 
 
 .degree .icon {
-  margin-right: -30px;
   margin-top: 10px;
 }
 
 .degree .icon img {
-  width: 111px;
+  width: 120px;
 }
 
 .weather-details {
